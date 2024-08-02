@@ -81,6 +81,7 @@ signUp.addEventListener('click', (event) => {
                 lastName: lastName
             };
             showMessage('Account Created Successfully', 'signUpMessage');
+            localStorage.setItem("username", user.firstName + user.lastName)
             const docRef = doc(db, "users", user.uid);
             setDoc(docRef, userData)
                 .then(() => {
@@ -126,3 +127,4 @@ signIn.addEventListener('click', (event) => {
             }
         })
 })
+
